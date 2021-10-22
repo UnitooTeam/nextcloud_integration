@@ -46,7 +46,7 @@ app_license = "MIT"
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
 
 # Generators
@@ -96,28 +96,36 @@ app_license = "MIT"
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+# 	}
 # }
+doc_events = {
+    "Event": {
+        "after_insert": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.insert_event_in_nextcloud_calendar",
+        "on_update": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.update_event_in_nextcloud_calendar",
+        "on_trash": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.delete_event_from_nextcloud_calendar",
+    },
+}
 
 # Scheduled Tasks
 # ---------------
 
 scheduler_events = {
-# 	"all": [
-# 		"nextcloud_integration.tasks.all"
-# 	],
-	"daily": [
-		"nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.daily_backup"
-	],
-# 	"hourly": [
-# 		"nextcloud_integration.tasks.hourly"
-# 	],
-	"weekly": [
-		"nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.weekly_backup"
-	],
-# 	"monthly": [
-# 		"nextcloud_integration.tasks.monthly"
-# 	]
+    # 	"all": [
+    # 		"nextcloud_integration.tasks.all"
+    # 	],
+    "daily": [
+        "nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.daily_backup",
+        "frappe.integrations.doctype.google_contacts.google_contacts.sync",
+    ],
+    "hourly": [
+        "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.sync",
+    ],
+    "weekly": [
+        "nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.weekly_backup"
+    ],
+    # 	"monthly": [
+    # 		"nextcloud_integration.tasks.monthly"
+    # 	]
 }
 
 # Testing
@@ -142,4 +150,3 @@ scheduler_events = {
 # exempt linked doctypes from being automatically cancelled
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
