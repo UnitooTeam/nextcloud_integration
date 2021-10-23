@@ -82,7 +82,7 @@
   ],
   "modified": "2021-10-22 17:23:00.798362",
   "modified_by": "Administrator",
-  "module": "Integrations",
+  "module": "Nextcloud Integration",
   "name": "Nextcloud Calendar",
   "owner": "Administrator",
   "permissions": [
