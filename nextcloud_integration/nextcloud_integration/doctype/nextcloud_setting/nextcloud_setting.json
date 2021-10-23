@@ -25,6 +25,11 @@
   ],
   "fields": [
     {
+      "fieldname": "tb_00",
+      "fieldtype": "Tab Break",
+      "label": "Backup Settings"
+    },
+    {
       "default": "0",
       "fieldname": "enabled",
       "fieldtype": "Check",
@@ -125,10 +130,21 @@
       "label": "Send Email for Successful Backup"
     },
     {
+      "fieldname": "tb_01",
+      "fieldtype": "Tab Break",
+      "label": "Calendar Settings"
+    },
+    {
       "default": "0",
       "fieldname": "calendar_enabled",
       "fieldtype": "Check",
       "label": "Enable Nextcloud Calendar"
+    },
+    {
+      "depends_on": "enabled",
+      "fieldname": "nextcloud_details",
+      "fieldtype": "Section Break",
+      "label": "Nextcloud Details"
     },
     {
       "fieldname": "calendar_user",
