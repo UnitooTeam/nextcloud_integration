@@ -9,11 +9,10 @@
     "sb_00",
     "calendar_name",
     "user",
-    "authorize_google_calendar_access",
     "sb_01",
-    "pull_from_google_calendar",
+    "pull_from_nextcloud_calendar",
     "cb_01",
-    "push_to_google_calendar",
+    "push_to_nextcloud_calendar",
     "section_break_3",
     "nextcloud_calendar_id"
   ],

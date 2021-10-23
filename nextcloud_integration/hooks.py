@@ -100,9 +100,9 @@ app_license = "MIT"
 # }
 doc_events = {
     "Event": {
-        "after_insert": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.insert_event_in_nextcloud_calendar",
-        "on_update": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.update_event_in_nextcloud_calendar",
-        "on_trash": "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.delete_event_from_nextcloud_calendar",
+        "after_insert": "nextcloud_integration.nextcloud_integration.nextcloud_calendar.nextcloud_calendar.insert_event_in_nextcloud_calendar",
+        "on_update": "nextcloud_integration.nextcloud_integration.doctype.nextcloud_calendar.nextcloud_calendar.update_event_in_nextcloud_calendar",
+        "on_trash": "nextcloud_integration.nextcloud_integration.doctype.nextcloud_calendar.nextcloud_calendar.delete_event_from_nextcloud_calendar",
     },
 }
 
@@ -113,12 +113,12 @@ scheduler_events = {
     # 	"all": [
     # 		"nextcloud_integration.tasks.all"
     # 	],
+    "hourly": [
+        "nextcloud_integration.nextcloud_integration.doctype.nextcloud_calendar.nextcloud_calendar.sync",
+    ],
     "daily": [
         "nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.daily_backup",
-        "frappe.integrations.doctype.google_contacts.google_contacts.sync",
-    ],
-    "hourly": [
-        "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.sync",
+        "nextcloud_integration.nextcloud_integration.doctype.nextcloud_calendar.nextcloud_calendar.sync",
     ],
     "weekly": [
         "nextcloud_integration.nextcloud_integration.doctype.nextcloud_setting.nextcloud_setting.weekly_backup"

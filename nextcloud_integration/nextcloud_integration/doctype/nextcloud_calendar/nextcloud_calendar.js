@@ -33,7 +33,7 @@ frappe.ui.form.on("Nextcloud Calendar", {
         frappe
           .call({
             method:
-              "frappe.integrations.doctype.nextcloud_calendar.nextcloud_calendar.sync",
+              "nextcloud_integration.nextcloud_integration.doctype.nextcloud_calendar.nextcloud_calendar.sync",
             args: {
               n_calendar: frm.doc.name,
             },
