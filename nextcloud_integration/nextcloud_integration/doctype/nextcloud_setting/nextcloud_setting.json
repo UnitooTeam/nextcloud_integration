@@ -5,6 +5,7 @@
   "editable_grid": 1,
   "engine": "InnoDB",
   "field_order": [
+    "tb_00",
     "enabled",
     "nextcloud_details",
     "nextcloud_username",
@@ -19,6 +20,7 @@
     "column_break_12",
     "send_notifications_to",
     "send_email_for_successful_backup",
+    "tb_01",
     "calendar_enabled",
     "calendar_user",
     "calendar_password"
@@ -141,7 +143,7 @@
       "label": "Enable Nextcloud Calendar"
     },
     {
-      "depends_on": "enabled",
+      "depends_on": "calendar_enabled",
       "fieldname": "nextcloud_details",
       "fieldtype": "Section Break",
       "label": "Nextcloud Details"
