@@ -41,7 +41,7 @@ class NextcloudCalendar(Document):
     def validate(self):
         nextcloud_settings = frappe.get_single("Nextcloud Setting")
 
-        if not nextcloud_settings.calendar_enable:
+        if not nextcloud_settings.calendar_enabled:
             frappe.throw(_("Enable Nextcloud Calendar in Nextcloud Settings"))
 
         if (
