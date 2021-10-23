@@ -22,6 +22,7 @@
     "send_email_for_successful_backup",
     "tb_01",
     "calendar_enabled",
+    "calendar_host",
     "calendar_user",
     "calendar_password"
   ],
@@ -149,6 +150,15 @@
       "label": "Nextcloud Details"
     },
     {
+      "fieldname": "calendar_host",
+      "fieldtype": "Data",
+      "description": "Example: https://your.nextcloud.com/remote.php/dav/",
+      "in_list_view": 1,
+      "label": "Nextcloud Calendar Server",
+      "mandatory_depends_on": "calendar_enabled",
+      "reqd": 1
+    },
+    {
       "fieldname": "calendar_user",
       "fieldtype": "Data",
       "in_list_view": 1,
@@ -158,7 +168,7 @@
     },
     {
       "fieldname": "calendar_password",
-      "fieldtype": "Data",
+      "fieldtype": "Password",
       "in_list_view": 1,
       "label": "Nextcloud Calendar Password",
       "mandatory_depends_on": "calendar_enabled",

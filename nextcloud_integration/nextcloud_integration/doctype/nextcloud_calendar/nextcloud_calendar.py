@@ -80,14 +80,13 @@ def get_nextcloud_calendar_object_if_exists(account, cal_principal):
 
 def get_nextcloud_calendar_url(n_calendar):
     nextcloud_settings = frappe.get_doc("Nextcloud Settings")
-    account = frappe.get_doc("Nextcloud Calendar", n_calendar)
 
-    caldav_url = account.calendar_url[-1]
+    caldav_url = nextcloud_settings.calendar_host
     if caldav_url[-1] != "/":
         caldav_url += "/"
 
-    caldav_user = nextcloud_settings.calendar_user
-    caldav_url = caldav_url + "users/" + caldav_user
+    # caldav_user = nextcloud_settings.calendar_user
+    # caldav_url = caldav_url + "users/" + caldav_user
 
     return caldav_url
 
